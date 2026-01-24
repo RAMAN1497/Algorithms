@@ -17,30 +17,14 @@ int  power(int x, int n) {
 }
 
 int main() {
-    int x ;
+    int x,n ;
     cout<<"Enter the value of x";//base
-    cin>>x;        
-    int repetitions = 100;    // average over 100 runs
-
-    cout << "InputSize\tAverageTime(us)\n";
-
-    for (int n = 1000; n <= 20000; n += 1000) {
-
-        int totalTime = 0;
-
-        for (int i = 0; i < repetitions; i++) {
-
-            auto start = high_resolution_clock::now();
-            power(x, n);
-            auto end = high_resolution_clock::now();
-
-            auto duration = duration_cast<nanoseconds>(end - start);
-            totalTime += duration.count();
-        }
-
-        int avgTime = totalTime / repetitions;
-        cout << n << "\t\t" << avgTime << endl;
-    }
+    cin>>x;   
+    cout<<"Enter the value of n";//power
+    cin>>n; 
+    
+           cout<< power(x, n);
+           
 
     return 0;
 }
