@@ -16,36 +16,14 @@ int findMissing(int arr[], int n) {
 
 int main() {
 
-    int repetitions = 100;
-
-    cout << "InputSize\tAverageTime(us)\n";
-
-    for (int size = 1000; size <= 20000; size += 1000) {
-
+  int arr[20];
         // Create sorted consecutive array with one missing number
-        vector<int> arr(size);
-        int start = 500;                  // arbitrary start (not from 1)
-        int missingIndex = size / 2;      // missing in middle
-
-        for (int i = 0, val = start; i < size; val++) {
-            if (i == missingIndex) val++; // skip one number
-            arr[i++] = val;
-        }
-
-        long long totalTime = 0;
-
-        for (int i = 0; i < repetitions; i++) {
-
-            auto startTime = high_resolution_clock::now();
-            findMissing(arr.data(), size);
-            auto endTime = high_resolution_clock::now();
-
-            totalTime += duration_cast<microseconds>(endTime - startTime).count();
-        }
-
-        double avgTime = (double)totalTime / repetitions;
-        cout << size << "\t\t" << avgTime << endl;
-    }
+    for(int i=0;i<20;i++)
+{
+   cin>> arr[i];
+}   
+         cout<<findMissing(arr, 20);
+           
 
     return 0;
 }
