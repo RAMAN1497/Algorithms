@@ -8,12 +8,11 @@ To efficiently compute the value of x raised to the power n with minimum time co
 
  Algorithm 
 
-  int  power(int x, int n) {
-    if(n==0){
+   int  power(int x, int n) {
+   if(n==0){
         return 1;
     }
     int half = power(x, n / 2);
-
     if (n % 2 == 0)
         return half * half;
     else
