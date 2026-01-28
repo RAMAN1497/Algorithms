@@ -60,9 +60,10 @@ cout << "InputSize\tBubbleSort(ms)\tSelectionSort(ms)\n";
             selectionTime += duration_cast<milliseconds>(end - start).count();
         }
 
-        cout << n << "\t\t" << bubbleTime / repetitions << "\t\t" << selectionTime / repetitions << endl;
+        cout << n << "\t\t" << bubbleTime / 100 << "\t\t" << selectionTime / 100 << endl;
     }
 
     return 0;
 }
+
 
