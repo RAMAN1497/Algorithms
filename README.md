@@ -21,11 +21,11 @@ int power(int x, int n) {
 
 Time Complexity
 Time O(log n)
-Space O(log n) due to recursion stack
+Space O(log n)
 
 Use Case
 Used in cryptographic algorithms such as RSA and Diffie Hellman.
-Used for fast modular exponentiation in competitive programming.
+Fast modular exponentiation in competitive programming.
 Efficient computation of large powers.
 
 2. Permutations of a String
@@ -161,7 +161,7 @@ Time O(n)
 Space O(1)
 
 Use Case
-Used in bitwise problem solving and detecting missing elements in sequences.
+Used in bitwise problem solving and detecting missing elements.
 
 7. findTips
 
@@ -215,7 +215,7 @@ Used in digital logic design, boolean algebra, and circuit analysis.
 9. Linear Search
 
 Aim
-To search for a given key element in an array using linear search and analyze execution time.
+To search for a given key element in an array using linear search.
 
 Algorithm
 
@@ -237,8 +237,3 @@ Space O(1)
 
 Use Case
 Suitable for small datasets and unsorted arrays.
-Used when data is not sorted and preprocessing is not desired.
-
-
-
-
