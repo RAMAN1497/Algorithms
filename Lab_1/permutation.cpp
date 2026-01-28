@@ -37,10 +37,11 @@ int main() {
             totalTime += duration.count();
         }
 
-        double avgTime = (double)totalTime / repetitions;
+        double avgTime = (double)totalTime / 100;
         cout << size << "\t\t" << avgTime << endl;
     }
 
     return 0;
 }
+
 
