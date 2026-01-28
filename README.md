@@ -2,12 +2,13 @@
 
  1. Power of x^n using Binary Exponentiation (Recursive)
 
- Aim
+ Aim:
 To efficiently compute the value of xⁿ with minimum time complexity.
 
  Algorithm 
-int power(int x, int n) 
-{
+ 
+ int power(int x, int n) 
+ {
     if (n == 0) 
     {
         return 1;
