@@ -3,27 +3,22 @@
 using namespace std;
 using namespace std::chrono;
 
-// Tower of Hanoi (counting moves only)
 void hanoi(int n, char source, char auxiliary, char destination) {
     if (n == 0)
         return;
 
     hanoi(n - 1, source, destination, auxiliary);
-    // move is counted but not printed
     hanoi(n - 1, auxiliary, source, destination);
 }
 
 int main() {
-
-    int repetitions = 100;
-
     cout << "Rings\tAverageTime(ns)\n";
 
     for (int n = 3; n <= 15; n++) {
 
         long long totalTime = 0;
 
-        for (int i = 0; i < repetitions; i++) {
+        for (int i = 0; i < 100; i++) {
 
             auto start = high_resolution_clock::now();
             hanoi(n, 'A', 'B', 'C');
@@ -33,9 +28,10 @@ int main() {
             totalTime += duration.count();
         }
 
-        double avgTime = (double)totalTime / repetitions;
+        double avgTime = (double)totalTime / 100;
         cout << n << "\t" << avgTime << endl;
     }
 
     return 0;
 }
+
