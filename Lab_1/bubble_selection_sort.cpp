@@ -5,7 +5,6 @@
 using namespace std;
 using namespace std::chrono;
 
-// Bubble Sort
 void bubbleSort(vector<int>& arr) {
     int n = arr.size();
     for (int i = 0; i < n - 1; i++) {
@@ -16,24 +15,21 @@ void bubbleSort(vector<int>& arr) {
     }
 }
 
-// Selection Sort
+
 void selectionSort(vector<int>& arr) {
     int n = arr.size();
     for (int i = 0; i < n - 1; i++) {
-        int minIdx = i;
+        int min = i;
         for (int j = i + 1; j < n; j++) {
-            if (arr[j] < arr[minIdx])
+            if (arr[j] < arr[min])
                 minIdx = j;
         }
-        swap(arr[i], arr[minIdx]);
+        swap(arr[i], arr[min]);
     }
 }
 
 int main() {
-
-    int repetitions = 100;
-
-    cout << "InputSize\tBubbleSort(ms)\tSelectionSort(ms)\n";
+cout << "InputSize\tBubbleSort(ms)\tSelectionSort(ms)\n";
 
     for (int n = 1000; n <= 7000; n += 1000) {
 
@@ -44,8 +40,7 @@ int main() {
         long long bubbleTime = 0;
         long long selectionTime = 0;
 
-        // Bubble Sort Timing
-        for (int i = 0; i < repetitions; i++) {
+        for (int i = 0; i <100 i++) {
             vector<int> arr = original;
 
             auto start = high_resolution_clock::now();
@@ -55,8 +50,7 @@ int main() {
             bubbleTime += duration_cast<milliseconds>(end - start).count();
         }
 
-        // Selection Sort Timing
-        for (int i = 0; i < repetitions; i++) {
+        for (int i = 0; i <100; i++) {
             vector<int> arr = original;
 
             auto start = high_resolution_clock::now();
@@ -66,10 +60,9 @@ int main() {
             selectionTime += duration_cast<milliseconds>(end - start).count();
         }
 
-        cout << n << "\t\t"
-             << bubbleTime / repetitions << "\t\t"
-             << selectionTime / repetitions << endl;
+        cout << n << "\t\t" << bubbleTime / repetitions << "\t\t" << selectionTime / repetitions << endl;
     }
 
     return 0;
 }
+
