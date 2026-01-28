@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-long long horner(int coeff[], int n, int x, int i) {
+int horner(int coeff[], int n, int x, int i) {
     if (i == n)
         return coeff[i];
     return coeff[i] + x * horner(coeff, n, x, i + 1);
@@ -16,3 +16,4 @@ int main() {
 
     return 0;
 }
+
